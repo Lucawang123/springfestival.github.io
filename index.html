@@ -25,13 +25,22 @@
 
 <body>
 <script type="text/javascript">
-  window._mfq = window._mfq || [];
-  (function() {
-    var mf = document.createElement("script");
-    mf.type = "text/javascript"; mf.defer = true;
-    mf.src = "//cdn.mouseflow.com/projects/f2299ece-4c3f-45db-88c8-dc005e63d422.js";
-    document.getElementsByTagName("head")[0].appendChild(mf);
-  })();
+var Countly = Countly || {};
+Countly.q = Countly.q || [];
+
+//provide countly initialization parameters
+Countly.app_key = "31ceadf446c09cbcbcf4d768906dea53ad926ab0";
+Countly.url = "http://localhosts:32768";
+
+//load countly script asynchronously
+(function() {
+  var cly = document.createElement('script'); cly.type = 'text/javascript';
+  cly.async = true;
+  //enter url of script here
+  cly.src = 'https://cdn.jsdelivr.net/npm/countly-sdk-web';
+  cly.onload = function(){Countly.init()};
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cly, s);
+})();
 </script>
 
   <div class="head">
@@ -202,6 +211,7 @@
             Creative Commons Attribution-NonCommercial 4.0 International License
         </a>.
     </div>
+	
 </body>
 
 </html>
